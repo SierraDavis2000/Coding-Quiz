@@ -8,11 +8,30 @@
         <link rel="stylesheet" href="Code Quiz\assests\style.css" />
       </head>
     <body>
-        <div class="wrapper">
+        <div class="welcome">
             <header>
              <h1>Sierra's Coding Quiz Challenge</h1>  
-             <h3>Try to answer the following coding related questions with in the time limit. Please note that any incorrect answers will penalize your time by 10 seconds!</h3>
+             <h3>Try to answer the following coding related questions within the time limit. Please note that any incorrect answers will penalize your time by 10 seconds!</h3>
+            </header>
+            
         </div>
+        <div class="container" >
+            <div id = "question-container" class = "hide">
+                <div id = "question">Question</div>
+                <div id = "answer-buttons" class = "btn-grid">
+                    <button class="btn" >Answer A</button>
+                    <button class="btn" >Answer B</button>
+                    <button class="btn" >Answer C</button>
+                    <button class="btn" >Answer D</button>
+                </div>
+            </div>
+            <div class="controls">
+                <button id = "start-btn" class = "start-btn btn">Start Quiz</button>
+            </div>
+
+        </div>
+    
+
         <script src="Code Quiz\assests\script.js"></script>
     </body>
 </html>
