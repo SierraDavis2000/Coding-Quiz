@@ -20,3 +20,5 @@ Example of Quiz Question - see timer not displayed
 submit highscore page functional
 
 final page to see high scores end in error
+
+due to errors - website could not deploy
