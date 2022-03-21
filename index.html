@@ -1,37 +1,24 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Sierra's Coding Quiz</title>
-        <link rel="stylesheet" href="Code Quiz\assests\style.css" />
-      </head>
-    <body>
-        <div class="welcome">
-            <header>
-             <h1>Sierra's Coding Quiz Challenge</h1>  
-             <h3>Try to answer the following coding related questions within the time limit. Please note that any incorrect answers will penalize your time by 10 seconds!</h3>
-            </header>
-            
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra's Coding Quiz</title>
+    <link rel="stylesheet" href="Code Quiz\assests\style.css" />
+</head>
+<body>
+    <div class="welcome">
+        <header>
+         <h1>Sierra's Coding Quiz Challenge</h1>  
+         <h3>Try to answer the following coding related questions within the time limit.</h3>
+        </header>
+        <div class="controls">
+            <a href ="Code Quiz\assests\quizpage.html" id = "start-btn" class = "start-btn btn">Start Quiz</a>
+            <a href="/highscores.html" id = "highscore-btn" class = "btn">High Scores</a>
         </div>
-        <div class="container" >
-            <div id = "question-container" class = "hide">
-                <div id = "question">Question</div>
-                <div id = "answer-buttons" class = "btn-grid">
-                    <button class="btn" >Answer A</button>
-                    <button class="btn" >Answer B</button>
-                    <button class="btn" >Answer C</button>
-                    <button class="btn" >Answer D</button>
-                </div>
-            </div>
-            <div class="controls">
-                <button id = "start-btn" class = "start-btn btn">Start Quiz</button>
-            </div>
-
-        </div>
-    
-
-        <script src="Code Quiz\assests\script.js"></script>
-    </body>
+       
+    </div>
+    <script src="Code Quiz\assests\script.js"></script>
+</body>
 </html>
