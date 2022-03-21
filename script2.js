@@ -1,13 +1,12 @@
-const question = document.getElementById("question");
-const choices = Array.from(document.getElementById("choices"))
-const scoreText = document.getElementById("score")
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.choice-text'));
+const scoreText = document.querySelector('#score');
 
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let questionCounter = 0
 let availableQuestions = []
-
 
 let questions = [
     {
@@ -56,41 +55,38 @@ let questions = [
 ]
 
 const SCORE_POINTS = 100
-const MAX_QUESTIONS = 5
+const MAX_QUESTIONS = 4
 
-function startQuiz(){
+startGame = () => {
     questionCounter = 0
-    score = 0 
+    score = 0
     availableQuestions = [...questions]
     getNewQuestion()
 }
 
-function getNewQuestion(){
-    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
+getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('/end.html')
+        return window.location.assign('end.html')
     }
+
     questionCounter++
 
-    const questionIndex = Math.floor(Math.random()*availableQuestions.length)
-    currentQuestion = availableQuestions[questionIndex]
+    
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
+
     choices.forEach(choice => {
         const number = choice.dataset['number']
-        choice.innerText = currentQuestion[choice + number]
+        choice.innerText = currentQuestion['choice' + number]
     })
 
-    availableQuestions.splice(questionIndex, 1)
+    availableQuestions.splice(questionsIndex, 1)
+
     acceptingAnswers = true
 }
-
-incrementScore = num => {
-    score += num
-    scoreText.innerText = score
-}
-
-startQuiz()
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
@@ -102,14 +98,23 @@ choices.forEach(choice => {
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-        if (classToApply === 'correct'){
+        if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
-        } 
+        }
+
         selectedChoice.parentElement.classList.add(classToApply)
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
+
         }, 1000)
     })
 })
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+startGame()

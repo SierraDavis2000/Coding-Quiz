@@ -1,6 +1,6 @@
 html,
 body, .welcome {
-  height: 20%;
+  height: 30%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,7 +27,7 @@ body {
 
 .container {
   width: 800px;
-  height: 300px;
+  height: 500px;
   display: flex;
   justify-content: center;
   max-width: 80%;
@@ -60,3 +60,49 @@ body {
 .btn:hover {
   border-color: black;
 }
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  border-color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+
+.choice-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 5px;
+  margin: 0;
+  width: 100%;
+  border-radius: 4px;
+  background: purple;
+  font-size: 15px;
+  color: white;
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  
+}
+
+.choice-prefix {
+  padding: 10px;
+  color: white;
+}
+
+.choice-text {
+  padding: 10px;
+  width: 100%;
+}
+
