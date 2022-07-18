@@ -1,24 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sierra's Coding Quiz</title>
-    <link rel="stylesheet" href="Code Quiz\assests\style.css" />
-</head>
-<body>
-    <div class="welcome">
-        <header>
-         <h1>Sierra's Coding Quiz Challenge</h1>  
-         <h3>Try to answer the following coding related questions within the time limit.</h3>
-        </header>
-        <div class="controls">
-            <a href ="Code Quiz\assests\quizpage.html" id = "start-btn" class = "start-btn btn">Start Quiz</a>
-            <a href="/highscores.html" id = "highscore-btn" class = "btn">High Scores</a>
+<html>
+  <head>
+    <title>Code Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+        <div class="header">
+            <!--left corner to view high score-->
+            <div>
+                <button class="button" id="score_board">View Highscores</button>
+            </div>
+            <!--right corner to set a timer-->
+            <div>
+                <p id="timer"> Time left: 60 s</p>
+            </div>
         </div>
-       
-    </div>
-    <script src="Code Quiz\assests\script.js"></script>
-</body>
+    </header>
+
+    <main>
+        <div>
+            <!--introduction section-->
+            <section class="intro_page" id="intro_page">
+                <div id="startpage">
+                    <h1>
+                        Welcome to Sierra's Coding Quiz Challenge
+                    </h1>
+                    <p id="startpage">
+                        Try to answer the following code-related questions within the time limit. Any incorrect answers will penalize your time by ten seconds!
+                    </p>
+                    <button class="button" id="start_button">Start Quiz</button>
+                </div>
+            </section>
+
+            <!--questions section-->
+            <section class="quiz_page" id="quiz_page">
+                <div>
+                    <!--question body-->
+                    <div>
+                        <h2 id = "current_question">Ask the question</h2>
+                        <ul>
+                            <li><button class ="choices button" id="answer_btn1" value="a">Answer1</button></li>
+                            <li><button class ="choices button" id="answer_btn2" value="b">Answer2</button></li>
+                            <li><button class ="choices button" id="answer_btn3" value="c">Answer3</button></li>
+                            <li><button class ="choices button" id="answer_btn4" value="d">Answer4</button></li>
+                        </ul>
+                    <div>
+
+                    <!--question check-->
+                    <div id="check_line">
+                        <p>Correct or Wrong</p>
+                    <!-- </div> -->
+                </div>
+            </section>
+
+            <!--final report section-->
+            <section class="submit_page" id="submit_page">
+                <div>
+                    <h2 id="finish">Time to Submit Your Quiz</h2>
+                    <p id = "final_score">Your final score is: </p>
+                    <p>Enter initials
+                        <input id="initial">
+                        <button class="button" id="submit_btn">Submit</button>
+                    </p>
+                </div>
+            </section>
+
+            <!--high score section-->
+            <section class="highscore_page" id ="highscore_page">
+                <div>
+                    <h2>High Scores</h2>
+                    <div id="score_record"><p>Your record</p></div><br><br>
+                    <div>
+                        <button class="button" id="back_btn">Go back</button>
+                        <button class="button" id="clear_btn">Clear Highscores</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="assets/script/script.js"></script>
+  </body>
 </html>
