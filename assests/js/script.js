@@ -19,7 +19,7 @@ var userInitial =document.querySelector("#initial");
 var submitBtn =document.querySelector("#submit_btn");
 var highScorePage =document.querySelector("#highscore_page");
 var scoreRecord =document.querySelector("#score_record");
-var scoreCheck =document.querySelector("#score_check");
+var scoreCheck =document.querySelector("#final_score");
 var finish =document.querySelector("#finish");
 
 var backBtn =document.querySelector("#back_btn");
@@ -33,30 +33,30 @@ let questions = [
     {
         question: "Which of the following is not a programing language?",
         choices:["A. Python", "B. Java", "C. TypeScript", "D. Rattlesnake"],
-        answer: "D",
+        answer: ["D. Rattlesnake"],
 
     },
     {
         question: "What does HTML stand for?",
         choices:["A. HyperText Markup Language", "B. Home Tool Markup Language", "C. High Traffic Media Language", "D. High Text Markup Language"],
-        answer: "A",
+        answer: ["A. HyperText Markup Language"],
     },
     {
         question: "Where is the JavaScript placed inside an HTML document or page?",
         choices:["A. In the <body> and <head> sections", "B. In the <footer> section", "C. In the <meta> section", "D. In the <title> section"], 
-        answer: "A",
+        answer: ["A. In the <body> and <head> sections"],
       
     },
     {
         question: "In JavaScript, what element is used to store and manipulate text, usually in multiples?",
         choices:["A. Arrays", "B. Strings", "C. Variables", "D. Recorders"],
-        answer: "B",
+        answer: ["B. Strings"],
     
     },
     {
         question: "Which is the largest unit of storage?",
         choices:["A. Megabyte", "B. Terabyte", "C. Gigabyte", "D. Kilobyte"],
-        answer: "B",
+        answer: ["B. Terabyte"],
     }
 ]
 
@@ -76,7 +76,7 @@ function timer() {
 
         if (secondsLeft <= 0){
             clearInterval(timerInterval);
-            timeLeft.textContent = "The Quiz is Now Over"; 
+            timeRemaining.textContent = "The Quiz is Now Over"; 
             finish.textContent = "The Quiz is Now Over";
             finishQuiz();
 
@@ -106,7 +106,7 @@ function showQuestion (n) {
 }
 
 function checkAnswer(event) {
-    event.preventDefault();
+    //event.preventDefault();
     checkLine.style.display = "block";
     setTimeout(function () {
         checkLine.style.display = 'none';
@@ -120,7 +120,7 @@ function checkAnswer(event) {
         secondsLeft = secondsLeft - 10;
         checkLine.textContent = "Incorrect! The correct answer is " + questions[questionNumber].answer + " .";
     }
-    if (questionNumber < questionSource.length -1 ) {
+    if (questionNumber < questions.length -1 ) {
         showQuestion(questionNumber +1);
     } else {
     finishQuiz();
@@ -134,7 +134,7 @@ function finishQuiz() {
     scoreBoard.style.display = "block";
     console.log(scoreBoard);
     finalScore.textContent = "Your final score is :" + totalScore ; 
-    timeLeft.style.display = "none"; 
+    timeRemaining.style.display = "none"; 
 };
 
 function getScore () {
@@ -188,9 +188,9 @@ function saveScore () {
 startBtn.addEventListener("click", startQuiz);
 
 
-reactButtons.forEach(function(click){
+reactButtons.forEach(function(event){
 
-    click.addEventListener("click", checkAnswer);
+    event.addEventListener("click", checkAnswer);
 });
 
 
@@ -199,7 +199,7 @@ submitBtn.addEventListener("click", function(event) {
     scoreBoard.style.display = "none";
     introPage.style.display = "none";
     highScorePage.style.display = "block";
-    questionPage.style.display ="none";
+    quizPage.style.display ="none";
     saveScore();
 });
 
@@ -209,7 +209,7 @@ finalScore.addEventListener("click", function(event) {
     scoreBoard.style.display = "none";
     introPage.style.display = "none";
     highScorePage.style.display = "block";
-    questionPage.style.display ="none";
+    quizPage.style.display ="none";
     renderScore();
 });
 
@@ -219,7 +219,7 @@ backBtn.addEventListener("click",function(event){
         scoreBoard.style.display = "none";
         introPage.style.display = "block";
         highScorePage.style.display = "none";
-        questionPage.style.display ="none";
+        quizPage.style.display ="none";
         location.reload();
 });
 
