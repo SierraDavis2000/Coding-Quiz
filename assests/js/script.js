@@ -204,7 +204,7 @@ submitBtn.addEventListener("click", function(event) {
 });
 
 
-scoreCheck.addEventListener("click", function(event) {
+finalScore.addEventListener("click", function(event) {
     event.preventDefault();
     scoreBoard.style.display = "none";
     introPage.style.display = "none";
