@@ -1,24 +1,26 @@
-# Coding-Quiz
-Challenge #4
-This assignment is an attempt at challenge 4 - coding quiz
+# Coding Quiz
 
-some issues in coding
-- unable to properly direct user to save final high score
-- timer kept corrupting the script and quiz
-- unable to properly time movement
-- incorrect/correct display not working
+## Description 
 
-*plan to reattempt/resubmit assignment at a later date
+This application is a timed coding quiz with multiple-choice questions. It runs with dynamically updated HTML and CSS powered by JavaScript. This quiz tracks high scores and administers time penalities for incorrect answers. 
 
-![image](https://user-images.githubusercontent.com/99284604/159198834-28ac4c2a-4bb7-4f10-a57f-c14537088c95.png)
-Home Page
+## User Story
 
-![image](https://user-images.githubusercontent.com/99284604/159198861-43b07764-698e-454a-86ce-623c563e1c2c.png)
-Example of Quiz Question - see timer not displayed
+AS A coding boot camp student
+I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+SO THAT I can gauge my progress compared to my peers
 
-![image](https://user-images.githubusercontent.com/99284604/159198890-b242a137-6106-4997-855b-8c4783991131.png)
-submit highscore page functional
+## Screenshots
 
-final page to see high scores end in error
+Start Page: 
 
-due to errors - website could not deploy
+![image](https://user-images.githubusercontent.com/99284604/180051157-2a326a18-8567-4bbe-993a-bb30976ddf06.png)
+
+Example Quiz Question:
+
+![image](https://user-images.githubusercontent.com/99284604/180051253-b48409ef-7d11-4320-956e-ba0345b6465d.png)
+
+
+## Deployed Application
+
+You can see the deployed application using the following link: 
